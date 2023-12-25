@@ -1,0 +1,40 @@
+<!doctype html> {% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" class="active">About</a></li>
+            <li><a href="{% url 'work' %}" >Work</a></li>
+            <li><a href="{% url 'blog' %}">Blog</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </header>
+    <footer class="foot" id="foot">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">Logo</a>
+            </div>
+            <div class="footer-links">
+            </div>
+            <div class="footer-social" id="footer-social">
+                <ul>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/facebook-icon.png' %}" alt="Facebook"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn"></a></li>
+                    <!-- Add more social icons as needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" id="footer-bottom">
+            <p>&copy; 2023 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
+    
+</body>
+</html>

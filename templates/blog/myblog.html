@@ -1,0 +1,123 @@
+<!doctype html> {% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+            <li><a href="{% url 'work' %}" >Work</a></li>
+            <li><a href="{% url 'blog' %}" class="active">Blog </a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+    </header>
+    <div class="container">
+        <div class="box-container">
+            <div class="box">
+                <img src="{% static 'images/icon-1.png' %}" alt="">
+                <h3>HTML 5</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/icon-2.png' %}" alt="">
+                <h3>CSS 3</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/icon-3.png' %}" alt="">
+                <h3>JavaScript</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/icon-4.png' %}" alt="">
+                <h3>SASS</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/icon-5.png' %}" alt="">
+                <h3>JQuery</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+
+            <div class="box">
+                <img src="{% static 'images/icon-6.png' %}" alt="">
+                <h3>React.js</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus, commodi?</p>
+                <a href="#" class="btn">read more</a>
+            </div>
+        </div>
+    </div>
+    <section>
+        <body>
+            <form action="" method="POST" novalidate>
+                {% csrf_token %}
+                {% if form.non_field_errors %}
+                {% for error in form.non_field_errors %}
+                <p>{{error}}</p>
+                {% endfor %}
+                {% endif %}
+                {% for frm in form %}
+                {{ frm.label_tag}} {{frm}} {{frm.errors | striptags}}<br><br>
+                {% endfor %}
+                <input type="submit" value="Login">
+            </form>
+            <div>
+                {% if blog %}
+                <table>
+                    <tr>
+                        <th>date</th>
+                        <th>writer</th>
+                        <th>title</th>
+                        <th>blog</th>
+                    </tr>
+                    {% for bg in blog %}
+                    <tr>
+                        <td>{{bg.date}}</td>
+                        <td>{{bg.writer}}</td>
+                        <td>{{bg.title}}</td>
+                        <td>{{bg.blog}}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+                {% else %}
+                <h1>No Blog!</h1>
+                {% endif %}
+            </div>
+        </body>
+    </section>
+
+    <footer class="foot" id="foot">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">Logo</a>
+            </div>
+            <div class="footer-links">
+            </div>
+            <div class="footer-social" id="footer-social">
+                <ul>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/facebook-icon.png' %}" alt="Facebook"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn"></a></li>
+                    <!-- Add more social icons as needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" id="footer-bottom">
+            <p>&copy; 2023 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

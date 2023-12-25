@@ -1,0 +1,136 @@
+<!doctype html> {% load static %}
+<html>
+    <head>
+        <title>Parallax Scrolling Website using Vanilla JavaScript</title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <header>
+            <a href="#" class="logo">Logo</a>
+            <ul>
+                <li><a href="{% url 'home' %}" class="active">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'work' %}">Work</a></li>
+                <li><a href="{% url 'blog' %}">Blog</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+        </header>
+        <section>
+            <img src="{% static 'images/stars.png' %}" id="stars">
+            <img src="{% static 'images/moon.png' %}" id="moon">
+            <img src="{% static 'images/mountains_behind.png' %}" id="mountains_behind">
+            <h2 id="text">Haider Ali Khan</h2>
+            <a href="#sec" id="btn">Explore Tools</a>
+            <img src="{% static 'images/mountains_front.png' %}" id="mountains_front">
+            
+        </section>
+        <div class="sec" id="sec">
+            <h2>Assalamu Alaikum</h2>
+            <section>
+                <div class="container">
+                    <div class="box" id="about">
+                        <h2>About</h2>
+                        <p>About content goes here...About content goes here...About content goes here...About content goes here...About content goes here...</p><br><br>
+                            Card title
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+
+                            Last updated 3 mins ago
+
+                            ...
+                            Card title
+                            This card has supporting text below as a natural lead-in to additional content.
+
+                            Last updated 3 mins ago
+
+                            ...
+                            Card title
+                            This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
+
+                            Last updated 3 mins ago<br><br>
+                    </div>
+                
+                    <div class="box" id="work">
+                        <h2>Work</h2>
+                        <p>Work content goes here...Work content goes here...Work content goes here...Work content goes here...</p>
+                    </div>
+            </section>
+            <div class="container">
+                <div class="blog" id="blog">
+                    <h2>Blog</h2>
+                    <div class="card-group">
+                        <div class="card">
+                          <img src="..." class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img src="..." class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                        <div class="card">
+                          <img src="..." class="card-img-top" alt="...">
+                          <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                            <p class="card-text"><small class="text-body-secondary">Last updated 3 mins ago</small></p>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="blog" id="blog">
+                    <h2>Contact</h2>
+                </div>
+        </div>
+        
+        <footer class="foot" id="foot">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <a href="#" class="logo">Logo</a>
+                </div>
+                <div class="footer-links">
+                </div>
+                <div class="footer-social" id="footer-social">
+                    <ul>
+                        <li><a href="#" target="_blank"><img src="{% static 'images/facebook-icon.png' %}" alt="Facebook"></a></li>
+                        <li><a href="#" target="_blank"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a></li>
+                        <li><a href="#" target="_blank"><img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn"></a></li>
+                        <!-- Add more social icons as needed -->
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom" id="footer-bottom">
+                <p>&copy; 2023 Your Website. All rights reserved.</p>
+            </div>
+        </footer>
+        <script>
+            let stars = document.getElementById('stars');
+            let moon = document.getElementById('moon');
+            let mountains_behind = document.getElementById('mountains_behind');
+            let text = document.getElementById('text');
+            let btn = document.getElementById('btn');
+            let mountains_front = document.getElementById('mountains_front');
+            let header = document.querySelector('header');
+
+            window.addEventListener('scroll', function() {
+                let value = window.scrollY;
+                stars.style.left = value * 0.25 + 'px';
+                moon.style.top = value * 1.0 + 'px';
+                mountains_behind.style.top = value * 0.5 + 'px';
+                mountains_front.style.top = value * 0 + 'px';
+                text.style.marginRight = value * 4 + 'px';
+                text.style.marginTop = value * 1.5 + 'px';
+                btn.style.marginTop = value * 1.5 + 'px';
+                header.style.top = value * 0.5 + 'px';
+            })
+        </script>
+    </body>
+</html>

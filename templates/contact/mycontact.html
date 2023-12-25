@@ -1,0 +1,99 @@
+<!doctype html> {% load static %}
+<html>
+    <head>
+
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+    </head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}" >About</a></li>
+            <li><a href="{% url 'work' %}" >Work</a></li>
+            <li><a href="{% url 'blog' %}" >Blog </a></li>
+            <li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+        </ul>
+    </header>
+    <div class="sec" id="sec">
+        <h2>Assalamu Alaikum</h2>
+        <p>I am Haider Ali Khan. I am a Software Engineer. <br><br>
+            I am Haider Ali Khan. I am a Software Engineer. <br><br>
+            Parallax is the apparent displacement of an object because of a change in the observer's point of view.
+            Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+            cameras that view objects from slightly different angles. 
+            Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+            to gain depth perception; this process is known as stereopsis. 
+            In computer vision the effect is used for computer stereo vision, and there is a 
+            device called a parallax rangefinder that uses it to find range, and in some variations also 
+            altitude to a target. <br><br>
+            Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+            cameras that view objects from slightly different angles. 
+            Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+            to gain depth perception; this process is known as stereopsis. 
+            In computer vision the effect is used for computer stereo vision, and there is a 
+            device called a parallax rangefinder that uses it to find range, and in some variations also 
+            altitude to a target. 
+            I am Haider Ali Khan. I am a Software Engineer. <br><br>
+                Parallax is the apparent displacement of an object because of a change in the observer's point of view.
+                Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+                cameras that view objects from slightly different angles. 
+                Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+                to gain depth perception; this process is known as stereopsis. 
+                In computer vision the effect is used for computer stereo vision, and there is a 
+                device called a parallax rangefinder that uses it to find range, and in some variations also 
+                altitude to a target. <br><br>
+                Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+                cameras that view objects from slightly different angles. 
+                Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+                to gain depth perception; this process is known as stereopsis. 
+                In computer vision the effect is used for computer stereo vision, and there is a 
+                device called a parallax rangefinder that uses it to find range, and in some variations also 
+                altitude to a target. 
+                I am Haider Ali Khan. I am a Software Engineer. <br><br>
+                Parallax is the apparent displacement of an object because of a change in the observer's point of view.
+                Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+                cameras that view objects from slightly different angles. 
+                Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+                to gain depth perception; this process is known as stereopsis. 
+                In computer vision the effect is used for computer stereo vision, and there is a 
+                device called a parallax rangefinder that uses it to find range, and in some variations also 
+                altitude to a target. <br><br>
+                Parallax also affects optical instruments such as rifle scopes, binoculars, microscopes, and twin-lens reflex
+                cameras that view objects from slightly different angles. 
+                Many animals, along with humans, have two eyes with overlapping visual fields that use parallax 
+                to gain depth perception; this process is known as stereopsis. 
+                In computer vision the effect is used for computer stereo vision, and there is a 
+                device called a parallax rangefinder that uses it to find range, and in some variations also 
+                altitude to a target. 
+        </p>
+    </div>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for frm in form %}
+            {{ frm.label_tag}} {{frm}} {{frm.errors | striptags}} <br><br>
+            {% endfor %}
+            <input type="submit" value="Submit">
+        </form>
+    <footer class="foot" id="foot">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <a href="#" class="logo">Logo</a>
+            </div>
+            <div class="footer-links">
+            </div>
+            <div class="footer-social" id="footer-social">
+                <ul>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/facebook-icon.png' %}" alt="Facebook"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/twitter-icon.png' %}" alt="Twitter"></a></li>
+                    <li><a href="#" target="_blank"><img src="{% static 'images/linkedin-icon.png' %}" alt="LinkedIn"></a></li>
+                    <!-- Add more social icons as needed -->
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom" id="footer-bottom">
+            <p>&copy; 2023 Your Website. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
